@@ -8,23 +8,27 @@ const conteinerRef = document.querySelector('#boxes')
 btnDestroy.addEventListener('click',minuseBox)
 btnCreate.addEventListener('click',plusBox)
 
-function valueInput() {
-  const value = document.querySelector('[type="number"]').value
-  plusBox(value)
-}
 
-function plusBox(value){
+
+function plusBox(){
+  function valueInput() {
+    const valueRef = document.querySelector('[type="number"]').value
+    return valueRef
+  }
 const size = 30
-for (let i = 0; i < value; i++) {
- const divSize = size + i + 10
- const div = document.createElement('div')
-  div.style.width = `${divSize}px`
-  div.style.height = `${divSize}px`
-  div.style.backgroundColor = getRandomHexColor()
+const boxs = []
+for (let i = 0; i < valueInput(); i++) {
+ const divSize = size + i * 10
+ const divRef = document.createElement('div')
+ divRef.style.width = `${divSize}px`
+ divRef.style.height = `${divSize}px`
+ divRef.style.backgroundColor = getRandomHexColor()
+  boxs.push(divRef)
  }
- conteinerRef.appendChild(div);
+ conteinerRef.append(...boxs);
 }
 
 function minuseBox(){
-  conteinerRef.innerHTML('')
+  conteinerRef.innerHTML=''
 }
+  

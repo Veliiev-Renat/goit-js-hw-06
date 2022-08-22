@@ -26,11 +26,12 @@ button {
   display: flex;
   padding-inline-start: 0;
   list-style-type: none;
+  box-sizing: border-box;
 }
 .gallery__item{
   width: calc((100% - 15px * 6) / 3);
-  height: 40vh;
   margin: 15px;
+  height: 40vh;
 }
 .gallery__img{
   width: 100%;

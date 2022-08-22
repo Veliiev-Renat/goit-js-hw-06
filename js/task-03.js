@@ -14,6 +14,6 @@ const images = [
 ];
 const listRef = document.querySelector('.gallery')
 const item = images.map((item)=>{
-return `<li class="gallery__item"><img url="${item.url}" alt="${item.alt}" class="gallery__img"/></li>`
-}).join('')
+return `<li class="gallery__item"><img src='${item.url}' alt='${item.alt}' class='gallery__img'></li>`
+})
 listRef.insertAdjacentHTML("afterbegin",item)
